@@ -1,10 +1,10 @@
 <template>
   <div class="content mx-5">
     <h1>Todo App</h1>
-    <form>
+    <form @submit.prevent="addTodo">
       <div class="field">
         <div class="control">
-          <input type="text" />
+          <input type="text" v-model="todo" class="input is-normal" placeholder="write a task" />
 
         </div>
       </div>
@@ -12,7 +12,30 @@
     </form>
   </div>
 </template>
+<script>
+import  {ref} from 'vue'
 
+
+export default {
+  setup(){
+    const todo = ref('')
+    const todos = ref([])
+
+    function addTodo(){
+      todos.value.push({
+        done:false,
+        content: todos.valıe,
+        id: Date.now()
+      });
+      todo.value = ''
+    }
+
+    return {
+      todo,
+      todos}
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
