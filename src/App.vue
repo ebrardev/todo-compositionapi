@@ -1,9 +1,16 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="content mx-5">
+    <h1>Todo App</h1>
+    <form>
+      <div class="field">
+        <div class="control">
+          <input type="text" />
+
+        </div>
+      </div>
+      <button type="submit" class="button is-info">Add</button>
+    </form>
+  </div>
 </template>
 
 <style>
